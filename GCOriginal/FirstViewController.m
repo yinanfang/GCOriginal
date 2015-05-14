@@ -15,6 +15,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelStatus;
 @property NSMutableArray *pinInfoArray;
 
+@property __block BOOL isFree;
+@property __block int currentCount;
+@property int totalCount;
+
 @end
 
 @implementation FirstViewController
@@ -54,6 +58,10 @@
     // Fake data
     [self fakeData];
     
+    self.isFree = YES;
+    self.currentCount = 0;
+    self.totalCount = (int)[self.pinInfoArray count];
+    
     // Push updates
     [self pushUpdates];
 }
@@ -81,24 +89,23 @@
 
 - (void)pushUpdates {
     if(self.watch) {
-        // Watch connected!
+        NSLog(@"Pushing updates...");
         [self.labelStatus setText:@"Pushing updates..."];
         
         // Send message to Pebble player
-        for (int i = 0; i < [self.pinInfoArray count]; i++) {
-            [self.watch appMessagesPushUpdate:self.pinInfoArray[i] onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
-                // Successful?
-                if(error) {
-                    NSLog(@"Error sending update: %@", error);
-                } else {
-                    NSLog(@"Update push secceeded!");
-
+        [self.watch appMessagesPushUpdate:self.pinInfoArray[self.currentCount] onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
+            // Successful?
+            if(error) {
+                NSLog(@"Error sending update: %@", error);
+            } else {
+                NSLog(@"Update push secceeded!");
+                self.currentCount++;
+                if (self.currentCount < self.totalCount) {
+                    NSLog(@"Needs to push more update!");
+                    [self pushUpdates];
                 }
-            }];
-        }
-        
-    
-    
+            }
+        }];
     
     } else {
         // Watch not connected!
