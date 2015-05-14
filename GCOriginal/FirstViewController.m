@@ -13,6 +13,7 @@
 
 @property PBWatch *watch;
 @property (weak, nonatomic) IBOutlet UILabel *labelStatus;
+@property NSMutableArray *pinInfoArray;
 
 @end
 
@@ -31,9 +32,7 @@
     [[PBPebbleCentral defaultCentral] setDelegate:self];
     // Get watch reference
     self.watch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
-    
-    // pull data from timeline
-    
+   
     
     
     
@@ -44,39 +43,67 @@
     
     [self pullTimelinePins];
     
-    
-    
-    
 }
 
 - (void)pullTimelinePins {
     NSLog(@"Pulling pins info");
+    
+    // Reset all pin info
+    self.pinInfoArray = [[NSMutableArray alloc] init];
+    
+    // Fake data
+    [self fakeData];
+    
+    // Push updates
+    [self pushUpdates];
+}
+
+#define Code_Hour       101
+#define Code_Minute     102
+
+- (void)fakeData {
+//    for (int i = 0; i < 5; i++) {
+//        NSMutableDictionary *item = [[NSMutableDictionary]]
+//    }
+    NSMutableDictionary *item01 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                 @(10), @(Code_Hour),
+                                 @(15), @(Code_Minute),
+                                 nil];
+    [self.pinInfoArray addObject:item01];
+    
+    NSMutableDictionary *item02 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                   @(5), @(Code_Hour),
+                                   @(40), @(Code_Minute),
+                                   nil];
+    [self.pinInfoArray addObject:item02];
+    
 }
 
 - (void)pushUpdates {
-//    if(self.watch) {
-//        // Watch connected!
-//        [self.labelStatus setText:@"Pushing updates..."];
-//        
-//        // Register for AppMessage delivery
-//        [self.watch appMessagesAddReceiveUpdateHandler:^BOOL(PBWatch *watch, NSDictionary *update) {
-//            // A new message has been received in 'update'
-//            if([update objectForKey:@(KEY_CHOICE)]) {
-//                // The KEY_CHOICE key is in the message!
-//                remoteChoice = [[update objectForKey:@(KEY_CHOICE)] intValue];
-//                
-//                // Has the iOS player chosen already?
-//                if(localChoice != CHOICE_WAITING) {
-//                    [self doMatch];
-//                }
-//            }
-//        
-//            return YES;
-//        }];
-//    } else {
-//        // Watch not connected!
-//        [self.labelStatus setText:@"Watch NOT connected!"];
-//    }
+    if(self.watch) {
+        // Watch connected!
+        [self.labelStatus setText:@"Pushing updates..."];
+        
+        // Send message to Pebble player
+        for (int i = 0; i < [self.pinInfoArray count]; i++) {
+            [self.watch appMessagesPushUpdate:self.pinInfoArray[i] onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
+                // Successful?
+                if(error) {
+                    NSLog(@"Error sending update: %@", error);
+                } else {
+                    NSLog(@"Update push secceeded!");
+
+                }
+            }];
+        }
+        
+    
+    
+    
+    } else {
+        // Watch not connected!
+        [self.labelStatus setText:@"Watch NOT connected!"];
+    }
 }
 
 
