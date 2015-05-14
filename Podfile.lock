@@ -20,14 +20,20 @@ PODS:
   - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FlatUIKit (1.6.1)
+  - MBProgressHUD (0.9.1)
   - PebbleKit (2.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
+  - FlatUIKit
+  - MBProgressHUD
   - PebbleKit
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  FlatUIKit: c602127a0c4a347e0632b2c5aef5c8c5f386f2cf
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   PebbleKit: e8650801927bd7272da83c8a21fb94d2af24465b
 
 COCOAPODS: 0.37.1

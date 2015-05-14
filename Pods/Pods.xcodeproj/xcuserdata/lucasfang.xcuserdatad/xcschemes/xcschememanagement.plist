@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-GCOriginal-FlatUIKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GCOriginal-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-GCOriginal.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>834F1B997F28C11CF5299FCD</key>
+		<key>017641A2C2E52EBE1C173973</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B871FF2C389882218FF1AF4</key>
+		<key>0D84261F32A850BB0B549F92</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B51962ADE586C07BCFD5C1F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE9EF63632E3C01191F920A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
