@@ -66,13 +66,21 @@
     [self pushUpdates];
 }
 
+#define Code_Reset      0
 #define Code_Hour       101
 #define Code_Minute     102
+#define Code_End        999
 
 - (void)fakeData {
 //    for (int i = 0; i < 5; i++) {
 //        NSMutableDictionary *item = [[NSMutableDictionary]]
 //    }
+    
+    NSMutableDictionary *item00 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                   @(0), @(Code_Reset),
+                                   nil];
+    [self.pinInfoArray addObject:item00];
+    
     NSMutableDictionary *item01 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                  @(10), @(Code_Hour),
                                  @(15), @(Code_Minute),
@@ -84,6 +92,11 @@
                                    @(40), @(Code_Minute),
                                    nil];
     [self.pinInfoArray addObject:item02];
+    
+    NSMutableDictionary *item999 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                   @(999), @(Code_End),
+                                   nil];
+    [self.pinInfoArray addObject:item999];
     
 }
 
