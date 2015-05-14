@@ -19,6 +19,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-GCOriginal-Mantle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GCOriginal-Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GCOriginal-ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-GCOriginal.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>017641A2C2E52EBE1C173973</key>
+		<key>05149B9196218F8B14D0ABB3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0D84261F32A850BB0B549F92</key>
+		<key>0A4F07E798142CC22F177160</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B51962ADE586C07BCFD5C1F2</key>
+		<key>0D9BC5B8661186596B6D8D64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE9EF63632E3C01191F920A5</key>
+		<key>77E089314C9FA14108E6F010</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>86F21565FAD4A2A5D9F4FFFA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA344B46EBAE7420C3D0BF3F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE04838E51B869BF40F98B55</key>
 		<dict>
 			<key>primary</key>
 			<true/>

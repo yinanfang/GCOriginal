@@ -8,16 +8,16 @@ target 'GCOriginal' do
   #pod 'FBSDKCoreKit'
   pod 'FlatUIKit'
   #pod 'FXBlurView'
-  #pod 'Mantle'
-  #pod 'Masonry'
+  pod 'Mantle'
+  pod 'Masonry'
   pod 'MBProgressHUD'
   #pod 'pop'
-  #pod 'ReactiveCocoa'
+  pod 'ReactiveCocoa'
   #pod 'Shimmer'
   #pod 'TSMessages'
   #pod 'Tweaks'
 
-  
+
 end
 
 target 'GCOriginalTests' do
