@@ -13,6 +13,9 @@
 @end
 
 @implementation FirstViewController
+- (IBAction)pressStart:(UIButton *)sender {
+    NSLog(@"pressed start...");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
