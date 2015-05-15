@@ -11,9 +11,9 @@ target 'GCOriginal' do
   pod 'Mantle'
   pod 'Masonry'
   pod 'MBProgressHUD'
-  #pod 'pop'
+  pod 'pop'
   pod 'ReactiveCocoa'
-  #pod 'Shimmer'
+  pod 'Shimmer'
   #pod 'TSMessages'
   #pod 'Tweaks'
 

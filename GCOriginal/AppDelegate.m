@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CentralViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Set up window
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Set global tint color
+    [self.window setTintColor:[UIColor whiteColor]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor clearColor];
+    UINavigationController *navigationController = [[UINavigationController alloc] init];
+    self.window.rootViewController = navigationController;
+    CentralViewController *firstViewController = [[CentralViewController alloc] init];
+    [navigationController pushViewController:firstViewController animated:NO];
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

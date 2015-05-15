@@ -27,6 +27,7 @@ PODS:
   - Masonry (0.6.1)
   - MBProgressHUD (0.9.1)
   - PebbleKit (2.4)
+  - pop (1.0.7)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -34,6 +35,7 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - Shimmer (1.0.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
@@ -42,7 +44,9 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - PebbleKit
+  - pop
   - ReactiveCocoa
+  - Shimmer
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
@@ -51,6 +55,8 @@ SPEC CHECKSUMS:
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   PebbleKit: e8650801927bd7272da83c8a21fb94d2af24465b
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
 COCOAPODS: 0.37.1
