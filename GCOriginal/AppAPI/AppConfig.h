@@ -44,6 +44,23 @@
 #pragma mark - Math
 #define METERS_PER_MILE 1609.344
 
+#define FontSize_LogInTextField     22.0f
+#define FontSize_H1                 18.0f
+#define FontSize_H2                 16.0f
+#define FontSize_P1                 16.0f
+#define WidthForEntryfieldBorder    1.0f
+#define CornerRadius_General        10.0f
+
+// General Layout Metrics
+// For MASConstraintMaker
+#define mas_Padding_Page_Large          UIEdgeInsetsMake(20, 20, -20, -20)
+#define mas_Padding_Page_Small          UIEdgeInsetsMake(5, 5, -5, -5)
+#define mas_Padding_Page_Default        UIEdgeInsetsMake(8, 8, -8, -8)
+// For UIKit
+#define Insets_Default              UIEdgeInsetsMake(8, 8, 8, 8)
+#define Insets_Button               UIEdgeInsetsMake(8, 10, 8, 10)
+
+
 
 @interface AppConfig : NSObject
 

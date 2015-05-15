@@ -39,4 +39,28 @@
 
 
 
+
+
+@end
+
+
+#pragma mark - UIkit and Foundation extention
+@interface UILabel (AdvancedInitialization)
++ (UILabel *)LabelTitleWithString:(NSString *)title align:(NSTextAlignment)alignment;
++ (UILabel *)LabelSubTitleWithString:(NSString *)title align:(NSTextAlignment)alignment;
+@end
+
+@interface UIButton (AdvancedInitialization)
++ (UIButton *)ButtonWithTitle:(NSString *)title inBold:(BOOL)IsBold horizontalAlign:(UIControlContentHorizontalAlignment)horizontalAlign;
+@end
+
+@interface FUIButton (AdvancedInitialization)
++ (FUIButton *)ButtonWithTitle:(NSString *)title inBold:(BOOL)IsBold;
+@end
+
+@interface UITextField (AdvancedInitialization)
++ (UITextField *)TextFieldWithPlaceHolder:(NSString *)placeHolder keyboardType:(UIKeyboardType)keyboardType;
+@end
+@interface UIImageView (AdvancedInitialization)
++ (UIImageView *)ImageViewWithDefaultBackgroundImage:(UIImage *)image;
 @end
