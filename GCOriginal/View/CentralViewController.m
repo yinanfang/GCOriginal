@@ -7,11 +7,14 @@
 //
 
 #import "CentralViewController.h"
-#import "PebbleKit/PebbleKit.h"
-#import <FlatUIKit/FlatUIKit.h>
-#import "AppConfig.h"
+#import "AppAPI.h"
 
 @interface CentralViewController ()
+
+@property BOOL didSetupConstraints;
+
+@property FUIButton *btn_Push;
+
 
 @end
 
@@ -24,11 +27,39 @@
     self.title = @"BLE Central";
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.btn_Push = [AppAPI ButtonWithTitle:@"Push" inBold:YES];
+    [self.view addSubview:self.btn_Push];
     
     
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setTitle:@"Show View" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
+    [self.view addSubview:button];
+    
+    [self updateViewConstraints];
 }
 
 - (void)updateViewConstraints {
+    if(!self.didSetupConstraints) {
+        // App logo
+        NSLog(@"setting up constraints");
+        
+        
+        [self.btn_Push mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.view.mas_centerX);
+            make.bottom.equalTo(self.view.mas_bottom).with.offset(-ScreenHeight/5);
+            make.size.mas_equalTo(CGSizeMake(250, 60));
+            
+            
+
+        }];
+        
+        
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
     
 }
 
@@ -45,31 +76,7 @@
 
 
 
-+ (FUIButton *)ButtonWithTitle:(NSString *)title inBold:(BOOL)IsBold
-{
-    FUIButton *button = [[FUIButton alloc] init];
-    button.buttonColor = [self getColorWithRGBAinHex:ThemeColor01];
-    button.shadowColor = [self getColorWithRGBAinHex:ThemeColor01_Variation01];
-    button.shadowHeight = 1.0f;
-    button.cornerRadius = 6.0f;
-    if (IsBold) {
-        button.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:FontSize_P1];
-    }else{
-        button.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:FontSize_P1];
-    }
-    [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-    return button;
-}
 
-+ (UIColor *)getColorWithRGBAinHex:(NSUInteger)color
-{
-    return [UIColor colorWithRed:((color >> 24) & 0xFF) / 255.0f
-                           green:((color >> 16) & 0xFF) / 255.0f
-                            blue:((color >> 8) & 0xFF) / 255.0f
-                           alpha:((color) & 0xFF) / 255.0f];
-}
 
 
 /*

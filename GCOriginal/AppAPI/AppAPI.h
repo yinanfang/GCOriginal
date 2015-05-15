@@ -7,6 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+
+// App
+#import "AppConfig.h"
+
+// PebbleKit
+#import "PebbleKit/PebbleKit.h"
+
 // AFNetworking
 #import <AFNetworking.h>
 // FlatUIKit
@@ -25,5 +32,11 @@
 #import <Shimmer/FBShimmeringView.h>
 
 @interface AppAPI : NSObject
+
++ (CGRect)getScreenBoundsDependOnOrientation;
++ (FUIButton *)ButtonWithTitle:(NSString *)title inBold:(BOOL)IsBold;
++ (UIColor *)getColorWithRGBAinHex:(NSUInteger)color;
+
+
 
 @end
