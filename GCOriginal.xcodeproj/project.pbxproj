@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		82662532575465C65401AD77 /* libPods-GCOriginal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5BFC4539244050F26FD688 /* libPods-GCOriginal.a */; };
+		C45B0C8B1B068B7E003972B4 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = C45B0C8A1B068B7E003972B4 /* Event.m */; };
+		C45B0C8E1B068BCC003972B4 /* AppViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45B0C8D1B068BCC003972B4 /* AppViewModel.m */; };
+		C45B0C931B068BD7003972B4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45B0C901B068BD7003972B4 /* FirstViewController.m */; };
+		C45B0C941B068BD7003972B4 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45B0C921B068BD7003972B4 /* SecondViewController.m */; };
 		C460808A1B041DEC007B5605 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C46080891B041DEC007B5605 /* main.m */; };
 		C460808D1B041DEC007B5605 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C460808C1B041DEC007B5605 /* AppDelegate.m */; };
-		C46080901B041DEC007B5605 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C460808F1B041DEC007B5605 /* FirstViewController.m */; };
-		C46080931B041DEC007B5605 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C46080921B041DEC007B5605 /* SecondViewController.m */; };
 		C46080961B041DEC007B5605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46080941B041DEC007B5605 /* Main.storyboard */; };
 		C46080981B041DEC007B5605 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C46080971B041DEC007B5605 /* Images.xcassets */; };
 		C460809B1B041DEC007B5605 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46080991B041DEC007B5605 /* LaunchScreen.xib */; };
@@ -31,15 +33,19 @@
 /* Begin PBXFileReference section */
 		09F0B828EB8C9B3AF5AEB5A0 /* Pods-GCOriginal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCOriginal.release.xcconfig"; path = "Pods/Target Support Files/Pods-GCOriginal/Pods-GCOriginal.release.xcconfig"; sourceTree = "<group>"; };
 		6F27948F8ED16FCF7761D52D /* Pods-GCOriginal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCOriginal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GCOriginal/Pods-GCOriginal.debug.xcconfig"; sourceTree = "<group>"; };
+		C45B0C891B068B7E003972B4 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Model/Event.h; sourceTree = "<group>"; };
+		C45B0C8A1B068B7E003972B4 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Model/Event.m; sourceTree = "<group>"; };
+		C45B0C8C1B068BCC003972B4 /* AppViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppViewModel.h; path = ViewModel/AppViewModel.h; sourceTree = "<group>"; };
+		C45B0C8D1B068BCC003972B4 /* AppViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppViewModel.m; path = ViewModel/AppViewModel.m; sourceTree = "<group>"; };
+		C45B0C8F1B068BD7003972B4 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstViewController.h; path = View/FirstViewController.h; sourceTree = "<group>"; };
+		C45B0C901B068BD7003972B4 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstViewController.m; path = View/FirstViewController.m; sourceTree = "<group>"; };
+		C45B0C911B068BD7003972B4 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondViewController.h; path = View/SecondViewController.h; sourceTree = "<group>"; };
+		C45B0C921B068BD7003972B4 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondViewController.m; path = View/SecondViewController.m; sourceTree = "<group>"; };
 		C46080841B041DEC007B5605 /* GCOriginal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCOriginal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46080881B041DEC007B5605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C46080891B041DEC007B5605 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C460808B1B041DEC007B5605 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C460808C1B041DEC007B5605 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C460808E1B041DEC007B5605 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		C460808F1B041DEC007B5605 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		C46080911B041DEC007B5605 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		C46080921B041DEC007B5605 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		C46080951B041DEC007B5605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C46080971B041DEC007B5605 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C460809A1B041DEC007B5605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,6 +91,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C45B0C841B068ACA003972B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C45B0C8F1B068BD7003972B4 /* FirstViewController.h */,
+				C45B0C901B068BD7003972B4 /* FirstViewController.m */,
+				C45B0C911B068BD7003972B4 /* SecondViewController.h */,
+				C45B0C921B068BD7003972B4 /* SecondViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C45B0C881B068B24003972B4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C45B0C8C1B068BCC003972B4 /* AppViewModel.h */,
+				C45B0C8D1B068BCC003972B4 /* AppViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		C45B0C951B068C47003972B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C45B0C891B068B7E003972B4 /* Event.h */,
+				C45B0C8A1B068B7E003972B4 /* Event.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		C460807B1B041DEC007B5605 = {
 			isa = PBXGroup;
 			children = (
@@ -110,10 +145,9 @@
 			children = (
 				C460808B1B041DEC007B5605 /* AppDelegate.h */,
 				C460808C1B041DEC007B5605 /* AppDelegate.m */,
-				C460808E1B041DEC007B5605 /* FirstViewController.h */,
-				C460808F1B041DEC007B5605 /* FirstViewController.m */,
-				C46080911B041DEC007B5605 /* SecondViewController.h */,
-				C46080921B041DEC007B5605 /* SecondViewController.m */,
+				C45B0C841B068ACA003972B4 /* View */,
+				C45B0C881B068B24003972B4 /* ViewModel */,
+				C45B0C951B068C47003972B4 /* Model */,
 				C46080941B041DEC007B5605 /* Main.storyboard */,
 				C46080971B041DEC007B5605 /* Images.xcassets */,
 				C46080991B041DEC007B5605 /* LaunchScreen.xib */,
@@ -284,9 +318,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C46080931B041DEC007B5605 /* SecondViewController.m in Sources */,
+				C45B0C941B068BD7003972B4 /* SecondViewController.m in Sources */,
+				C45B0C8B1B068B7E003972B4 /* Event.m in Sources */,
 				C460808D1B041DEC007B5605 /* AppDelegate.m in Sources */,
-				C46080901B041DEC007B5605 /* FirstViewController.m in Sources */,
+				C45B0C931B068BD7003972B4 /* FirstViewController.m in Sources */,
+				C45B0C8E1B068BCC003972B4 /* AppViewModel.m in Sources */,
 				C460808A1B041DEC007B5605 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

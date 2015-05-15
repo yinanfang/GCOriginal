@@ -8,8 +8,11 @@
 
 #import "FirstViewController.h"
 #import "PebbleKit/PebbleKit.h"
+#import "AppDelegate.h"
 
 @interface FirstViewController () <PBPebbleCentralDelegate>
+
+@property AppDelegate *delegate;
 
 @property PBWatch *watch;
 @property (weak, nonatomic) IBOutlet UILabel *labelStatus;
@@ -37,8 +40,7 @@
     // Get watch reference
     self.watch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
    
-    
-    
+//    self.delegate = [[UIApplication sharedApplication] delegate];
     
 }
 
