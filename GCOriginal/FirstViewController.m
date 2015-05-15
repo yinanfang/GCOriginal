@@ -67,6 +67,7 @@
 }
 
 #define Code_Reset      0
+#define Code_IconType   1
 #define Code_Hour       101
 #define Code_Minute     102
 #define Code_End        999
@@ -78,6 +79,7 @@
     
     NSMutableDictionary *item00 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                    @(0), @(Code_Reset),
+                                   @(0), @(Code_IconType),
                                    nil];
     [self.pinInfoArray addObject:item00];
     
