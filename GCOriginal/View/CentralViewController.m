@@ -13,6 +13,10 @@
 
 @property BOOL didSetupConstraints;
 
+@property FUIButton *btn_selection1, *btn_selection2, *btn_selection3, *btn_selection4, *btn_selected;
+
+@property int selectedType;
+
 @property FUIButton *btn_Push;
 @property UILabel *label_Status;
 
@@ -21,8 +25,6 @@
 @property NSMutableArray *pinInfoArray;
 @property __block int currentCount;
 @property int totalCount;
-
-
 
 @end
 
@@ -35,6 +37,7 @@
     // View Init
     self.title = @"BLE Central";
     self.view.backgroundColor = [UIColor whiteColor];
+    self.selectedType = 1;
     
     // Get the watch
     uuid_t myAppUUIDbytes;
@@ -44,6 +47,53 @@
     [[PBPebbleCentral defaultCentral] setDelegate:self];
     // Get watch reference
     self.watch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
+    
+    // Selection setup
+    self.btn_selection1 = [FUIButton ButtonWithTitle:@"" inBold:YES];
+    [self.btn_selection1 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateNormal];
+    [self.btn_selection1 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateHighlighted];
+    [[self.btn_selection1 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [self animatePressWithButton:self.btn_selection1];
+        self.selectedType = 1;
+    }];
+    [self.view addSubview:self.btn_selection1];
+    
+    self.btn_selection2 = [FUIButton ButtonWithTitle:@"" inBold:YES];
+    [self.btn_selection2 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateNormal];
+    [self.btn_selection2 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateHighlighted];
+    [[self.btn_selection2 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [self animatePressWithButton:self.btn_selection2];
+        self.selectedType = 2;
+    }];
+    [self.view addSubview:self.btn_selection2];
+    
+    self.btn_selection3 = [FUIButton ButtonWithTitle:@"" inBold:YES];
+    [self.btn_selection3 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateNormal];
+    [self.btn_selection3 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateHighlighted];
+    [[self.btn_selection3 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [self animatePressWithButton:self.btn_selection3];
+        self.selectedType = 3;
+    }];
+    [self.view addSubview:self.btn_selection3];
+    
+    self.btn_selection4 = [FUIButton ButtonWithTitle:@"" inBold:YES];
+    [self.btn_selection4 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateNormal];
+    [self.btn_selection4 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateHighlighted];
+    [[self.btn_selection4 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [self animatePressWithButton:self.btn_selection4];
+        self.selectedType = 4;
+    }];
+    [self.view addSubview:self.btn_selection4];
+    
+    self.btn_selected = [FUIButton ButtonWithTitle:@"" inBold:YES];
+    [self.btn_selected setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateNormal];
+    [self.btn_selected setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateHighlighted];
+    [[self.btn_selected rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+
+    }];
+    [self.view addSubview:self.btn_selected];
+    
+    
     
     // Button setup
     self.btn_Push = [FUIButton ButtonWithTitle:@"Push" inBold:YES];
@@ -62,10 +112,55 @@
     [self updateViewConstraints];
 }
 
+- (void) animatePressWithButton:(FUIButton *)button {
+    // Compress
+    POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+    scaleAnimation.springSpeed = 200;
+    scaleAnimation.toValue = [NSValue valueWithCGSize:CGSizeMake(0.8, 0.8)];
+    scaleAnimation.springBounciness = 25.f;
+    [button.layer pop_addAnimation:scaleAnimation forKey:@"scaleAnim"];
+    // Expand
+    POPSpringAnimation *scaleAnimation2 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+    scaleAnimation2.beginTime = CACurrentMediaTime()+0.1;
+    scaleAnimation2.springSpeed = 100;
+    scaleAnimation2.toValue = [NSValue valueWithCGSize:CGSizeMake(1, 1)];
+    scaleAnimation2.springBounciness = 24.5f;
+    [button.layer pop_addAnimation:scaleAnimation2 forKey:@"scaleAnim2"];
+}
+
+#define IconSize        CGSizeMake(80, 80)
+#define CenterOffset    70
+
 - (void)updateViewConstraints {
     if(!self.didSetupConstraints) {
-        // App logo
-        NSLog(@"setting up constraints");
+        // Selections
+        [self.btn_selection1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view.mas_top).with.offset(4.5*mas_Padding_Page_Large.top);
+            make.centerX.equalTo(self.view.mas_centerX).with.offset(-CenterOffset);
+            make.size.mas_equalTo(IconSize);
+        }];
+        [self.btn_selection2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view.mas_top).with.offset(4.5*mas_Padding_Page_Large.top);
+            make.centerX.equalTo(self.view.mas_centerX).with.offset(CenterOffset);
+            make.size.mas_equalTo(IconSize);
+        }];
+        [self.btn_selection3 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.btn_selection1.mas_bottom).with.offset(mas_Padding_Page_Default.top);
+            make.centerX.equalTo(self.view.mas_centerX).with.offset(-CenterOffset);
+            make.size.mas_equalTo(IconSize);
+        }];
+        [self.btn_selection4 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.btn_selection2.mas_bottom).with.offset(mas_Padding_Page_Default.top);
+            make.centerX.equalTo(self.view.mas_centerX).with.offset(CenterOffset);
+            make.size.mas_equalTo(IconSize);
+        }];
+        [self.btn_selected mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.btn_selection3.mas_bottom).with.offset(5*mas_Padding_Page_Default.top);
+            make.centerX.equalTo(self.view.mas_centerX);
+            make.size.mas_equalTo(IconSize);
+        }];
+        
+        // Command button
         [self.btn_Push mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.view.mas_centerX);
             make.bottom.equalTo(self.view.mas_bottom).with.offset(-ScreenHeight/5);
@@ -98,6 +193,7 @@
     
     // Push updates
     [self.label_Status setText:@"Status: Pushing timeline pin info"];
+    NSLog(@"Pushing updates...");
     [self pushUpdates];
 }
 
@@ -114,7 +210,7 @@
     
     NSMutableDictionary *item00 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                    @(0), @(Code_Reset),
-                                   @(0), @(Code_IconType),
+                                   @(self.selectedType), @(Code_IconType),
                                    nil];
     [self.pinInfoArray addObject:item00];
     
@@ -139,9 +235,6 @@
 
 - (void)pushUpdates {
     if(self.watch) {
-        NSLog(@"Pushing updates...");
-        [self.labelStatus setText:@"Pushing updates..."];
-        
         // Send message to Pebble player
         [self.watch appMessagesPushUpdate:self.pinInfoArray[self.currentCount] onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
             // Successful?

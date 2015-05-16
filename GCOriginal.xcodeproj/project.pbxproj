@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		82662532575465C65401AD77 /* libPods-GCOriginal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5BFC4539244050F26FD688 /* libPods-GCOriginal.a */; };
 		C401F7BF1B06988A004A1BB3 /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C401F7BE1B06988A004A1BB3 /* AppConfig.m */; };
+		C401F7C51B06B89E004A1BB3 /* icon01.png in Resources */ = {isa = PBXBuildFile; fileRef = C401F7C41B06B89E004A1BB3 /* icon01.png */; };
 		C45B0C8B1B068B7E003972B4 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = C45B0C8A1B068B7E003972B4 /* Event.m */; };
 		C45B0C8E1B068BCC003972B4 /* AppViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45B0C8D1B068BCC003972B4 /* AppViewModel.m */; };
 		C45B0C931B068BD7003972B4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45B0C901B068BD7003972B4 /* FirstViewController.m */; };
@@ -38,6 +39,7 @@
 		6F27948F8ED16FCF7761D52D /* Pods-GCOriginal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCOriginal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GCOriginal/Pods-GCOriginal.debug.xcconfig"; sourceTree = "<group>"; };
 		C401F7BD1B06988A004A1BB3 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppConfig.h; path = AppAPI/AppConfig.h; sourceTree = "<group>"; };
 		C401F7BE1B06988A004A1BB3 /* AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppConfig.m; path = AppAPI/AppConfig.m; sourceTree = "<group>"; };
+		C401F7C41B06B89E004A1BB3 /* icon01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon01.png; sourceTree = "<group>"; };
 		C45B0C891B068B7E003972B4 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Model/Event.h; sourceTree = "<group>"; };
 		C45B0C8A1B068B7E003972B4 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Model/Event.m; sourceTree = "<group>"; };
 		C45B0C8C1B068BCC003972B4 /* AppViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppViewModel.h; path = ViewModel/AppViewModel.h; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 				DF5BFC4539244050F26FD688 /* libPods-GCOriginal.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C401F7C31B06B884004A1BB3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C401F7C41B06B89E004A1BB3 /* icon01.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		C45B0C841B068ACA003972B4 /* View */ = {
@@ -171,6 +181,7 @@
 				C45B0C881B068B24003972B4 /* ViewModel */,
 				C45B0C951B068C47003972B4 /* Model */,
 				C45B0C9C1B06917B003972B4 /* AppAPI */,
+				C401F7C31B06B884004A1BB3 /* Images */,
 				C46080941B041DEC007B5605 /* Main.storyboard */,
 				C46080971B041DEC007B5605 /* Images.xcassets */,
 				C46080991B041DEC007B5605 /* LaunchScreen.xib */,
@@ -291,6 +302,7 @@
 				C46080961B041DEC007B5605 /* Main.storyboard in Resources */,
 				C460809B1B041DEC007B5605 /* LaunchScreen.xib in Resources */,
 				C46080981B041DEC007B5605 /* Images.xcassets in Resources */,
+				C401F7C51B06B89E004A1BB3 /* icon01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
