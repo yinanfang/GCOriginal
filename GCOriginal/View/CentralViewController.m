@@ -49,51 +49,18 @@
     self.watch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
     
     // Selection setup
-    self.btn_selection1 = [FUIButton ButtonWithTitle:@"" inBold:YES];
-    [self.btn_selection1 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateNormal];
-    [self.btn_selection1 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateHighlighted];
-    [[self.btn_selection1 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [self animatePressWithButton:self.btn_selection1];
-        self.selectedType = 1;
-    }];
-    [self.view addSubview:self.btn_selection1];
+    self.btn_selection1 = [self setupButton:self.btn_selection1 withImageName:@"icon01"];
     
-    self.btn_selection2 = [FUIButton ButtonWithTitle:@"" inBold:YES];
-    [self.btn_selection2 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateNormal];
-    [self.btn_selection2 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateHighlighted];
-    [[self.btn_selection2 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [self animatePressWithButton:self.btn_selection2];
-        self.selectedType = 2;
-    }];
-    [self.view addSubview:self.btn_selection2];
-    
-    self.btn_selection3 = [FUIButton ButtonWithTitle:@"" inBold:YES];
-    [self.btn_selection3 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateNormal];
-    [self.btn_selection3 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateHighlighted];
-    [[self.btn_selection3 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [self animatePressWithButton:self.btn_selection3];
-        self.selectedType = 3;
-    }];
-    [self.view addSubview:self.btn_selection3];
-    
-    self.btn_selection4 = [FUIButton ButtonWithTitle:@"" inBold:YES];
-    [self.btn_selection4 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateNormal];
-    [self.btn_selection4 setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateHighlighted];
-    [[self.btn_selection4 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [self animatePressWithButton:self.btn_selection4];
-        self.selectedType = 4;
-    }];
-    [self.view addSubview:self.btn_selection4];
+    self.btn_selection2 = [self setupButton:self.btn_selection1 withImageName:@"icon02_large"];
+
+    self.btn_selection3 = [self setupButton:self.btn_selection1 withImageName:@"icon03_large"];
+
+    self.btn_selection4 = [self setupButton:self.btn_selection1 withImageName:@"icon04_large"];
     
     self.btn_selected = [FUIButton ButtonWithTitle:@"" inBold:YES];
     [self.btn_selected setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateNormal];
     [self.btn_selected setBackgroundImage:[UIImage imageNamed:@"icon01"] forState:UIControlStateHighlighted];
-    [[self.btn_selected rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-
-    }];
     [self.view addSubview:self.btn_selected];
-    
-    
     
     // Button setup
     self.btn_Push = [FUIButton ButtonWithTitle:@"Push" inBold:YES];
@@ -110,6 +77,18 @@
     [self.view addSubview:self.label_Status];
 
     [self updateViewConstraints];
+}
+
+- (FUIButton *)setupButton:(FUIButton *)button withImageName:(NSString *)name {
+    button = [FUIButton ButtonWithTitle:@"" inBold:YES];
+    [button setBackgroundImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:name] forState:UIControlStateHighlighted];
+    [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [self animatePressWithButton:button];
+        self.selectedType = 1;
+    }];
+    [self.view addSubview:button];
+    return button;
 }
 
 - (void) animatePressWithButton:(FUIButton *)button {
